@@ -1,0 +1,18 @@
+{
+  "name": "StatBarsPlugin",
+  "packageManager": "yarn@4.9.1",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "NODE_ENV=dev node build.mjs"
+  },
+  "main": "src/StatBarsPlugin.ts",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@highlite/plugin-api": "^1.0.5",
+    "esbuild": "^0.25.8",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,13 @@
+.hl-stat-bars-progress-bar {
+    position: relative;
+    height: 3px;
+    margin-top: 2px;
+    border-radius: calc(1px * Infinity);
+    overflow: hidden;
+}
+
+.hl-stat-bars-progress-bar > * {
+    position: absolute;
+    height: 100%;
+    border-radius: calc(1px * Infinity);
+}
