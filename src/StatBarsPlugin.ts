@@ -75,8 +75,11 @@ export class StatBarsPlugin extends Plugin {
     }
 
     start() {
-        this.setup();
-        this.log("Started");
+        this.cleanup();
+        if (this.isEnabled) {
+            this.setup();
+            this.log("Started");
+        }
     }
 
     stop() {
@@ -86,14 +89,6 @@ export class StatBarsPlugin extends Plugin {
 
     ScreenMask_initializeControls() {
         this.start();
-    }
-
-    SocketManager_loggedIn() {
-        this.start();
-    }
-
-    SocketManager_handleLoggedOut() {
-        this.stop();
     }
 
     StatsMenuManager_handleSkillExpChanged(e) {
