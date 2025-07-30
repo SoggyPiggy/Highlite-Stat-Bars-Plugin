@@ -44,8 +44,8 @@ export class StatBarsPlugin extends Plugin {
                 this.settings.bgColor.value = defaultBgColor;
                 this.settings.fgColor.value = defaultFgColor;
                 this.setStyles();
-            }
-        }
+            },
+        };
     }
 
     get isEnabled() {
@@ -106,20 +106,21 @@ export class StatBarsPlugin extends Plugin {
         const player = this.gameHooks?.EntityManager?.Instance?.MainPlayer;
         const combatSkills = player?.Combat?.Skills;
         const skillSkills = player?.Skills?.Skills;
-        new Array(Math.max(combatSkills?.length, skillSkills?.length)).fill(null).forEach(
-            (_, index) => {
+        new Array(Math.max(combatSkills?.length, skillSkills?.length))
+            .fill(null)
+            .forEach((_, index) => {
                 const skill = combatSkills[index] ?? skillSkills[index];
                 const statItem = this.statsMenuControl?.getStatItemForSkill(
                     skill?.Skill
                 );
                 this.setStatPercentage(skill, statItem);
-            }
-        );
+            });
     }
 
     private setStatPercentage(skill, statItem) {
         if (!skill || !statItem) {
-            return;}
+            return;
+        }
         const statElement: HTMLElement | null = statItem.getElement();
         if (!statElement) return;
         let barElement = statElement.getElementsByClassName(barClassName)[0];
