@@ -1,6 +1,7 @@
 import { Plugin, SettingsTypes } from "@highlite/plugin-api";
 import styleCss from "./styles.css";
 
+const containerId = "hs-stats-menu";
 const styleId = "hl-stat-bars-style";
 const barClassName = "hl-stat-bars-progress-bar";
 const defaultBgColor = "#e7000b";
@@ -140,11 +141,13 @@ export class StatBarsPlugin extends Plugin {
     }
 
     private setStyles() {
-        let styleElement = document.getElementById(styleId);
+        const styleContainer = document.getElementById(containerId);
+        if (!styleContainer) return;
+        let styleElement = styleContainer.querySelector(`#${styleId}`);
         if (!styleElement) {
             styleElement = document.createElement("style");
             styleElement.id = styleId;
-            document.body.appendChild(styleElement);
+            styleContainer.appendChild(styleElement);
         }
         styleElement.textContent = `
             .${barClassName} {
