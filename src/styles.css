@@ -1,4 +1,8 @@
-.hl-stat-bars-progress-bar {
+#hs-stats-menu:has( .hl-stat-bars-progress-bar) .hs-stats-menu__information-panel {
+    padding: 0.25rem 0.5rem;
+}
+
+#hs-stats-menu .hl-stat-bars-progress-bar {
     position: relative;
     height: 3px;
     margin-top: 2px;
@@ -6,7 +10,7 @@
     overflow: hidden;
 }
 
-.hl-stat-bars-progress-bar > * {
+#hs-stats-menu .hl-stat-bars-progress-bar > * {
     position: absolute;
     height: 100%;
     border-radius: calc(1px * Infinity);

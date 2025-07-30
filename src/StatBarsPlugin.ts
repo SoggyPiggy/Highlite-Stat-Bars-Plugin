@@ -145,13 +145,11 @@ export class StatBarsPlugin extends Plugin {
             styleElement.id = styleId;
             styleContainer.appendChild(styleElement);
         }
-        styleElement.textContent = `
-            .${barClassName} {
-                background: ${this.bgColor};
-            }
-            .${barClassName} > * {
-                background: ${this.fgColor};
-            }\n\n${styleCss}`;
+        styleElement.textContent = [
+            `#${containerId} .${barClassName} { background: ${this.bgColor}; }`,
+            `#${containerId} .${barClassName} > * { background: ${this.fgColor}; }`,
+            styleCss,
+        ].join("\n\n");
     }
 
     private setup() {
