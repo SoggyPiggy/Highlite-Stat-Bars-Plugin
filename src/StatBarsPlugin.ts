@@ -44,6 +44,7 @@ export class StatBarsPlugin extends Plugin {
                 this.settings.bgColor.value = defaultBgColor;
                 this.settings.fgColor.value = defaultFgColor;
                 this.setStyles();
+                this.updateSettingsUI();
             },
         };
     }
@@ -166,6 +167,12 @@ export class StatBarsPlugin extends Plugin {
             document.getElementsByClassName(barClassName)
         );
         barElements.forEach((element) => element.remove());
+    }
+
+    private updateSettingsUI() {
+        document.highlite?.managers?.SettingsManager?.updatePluginSettingsUI(
+            this
+        );
     }
 }
 
