@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=dev node build.mjs"
   },
   "main": "src/StatBarsPlugin.ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "devDependencies": {
     "@highlite/plugin-api": "^1.0.5",
     "esbuild": "^0.25.8",
