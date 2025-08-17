@@ -1,4 +1,4 @@
-import { Plugin, SettingsTypes } from "@highlite/plugin-api";
+import { Plugin, SettingsTypes } from "@highlite/core";
 import styleCss from "./styles.css";
 
 const containerId = "hs-stats-menu";

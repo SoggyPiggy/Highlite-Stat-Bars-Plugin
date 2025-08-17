@@ -11,7 +11,7 @@
   "main": "src/StatBarsPlugin.ts",
   "version": "1.0.2",
   "devDependencies": {
-    "@highlite/plugin-api": "^1.0.5",
+    "@highlite/core": "^2.1.1",
     "esbuild": "^0.25.8",
     "typescript": "^5.8.3"
   }
